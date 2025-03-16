@@ -6,16 +6,56 @@
     <title>Cookie Rundle Kingdom</title>
     <link rel="stylesheet" href="framework/bootstrap.min.css">
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
-        input, button { margin-top: 10px; padding: 5px; }
-        #result { margin-top: 20px; }
-        #guessCount { font-weight: bold; }
+        /* Font-face declarations to load custom fonts */
+        @font-face {
+            font-family: 'CookieRunBlack';
+            src: url('fonts/CookieRun Black.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'CookieRunBold';
+            src: url('fonts/CookieRun Bold.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'CookieRunRegular';
+            src: url('fonts/CookieRun Regular.ttf') format('truetype');
+        }
+
+        body { 
+            font-family: 'CookieRunRegular', sans-serif; /* Use CookieRun Regular for the body text */
+            text-align: center; 
+            margin: 50px; 
+        }
+
+        h1 {
+            font-family: 'CookieRunBlack', sans-serif; /* Use CookieRun Black for the main title */
+        }
+
+        h3 {
+            font-family: 'CookieRunBold', sans-serif; /* Use CookieRun Bold for the subtitle */
+        }
+
+        input, button { 
+            margin-top: 10px; 
+            padding: 5px; 
+        }
+
+        #result { 
+            margin-top: 20px; 
+        }
+
+        #guessCount { 
+            font-weight: bold; 
+        }
+
         .guess-container {
             display: flex;
             flex-direction: column-reverse;
             align-items: center;
             margin-top: 20px;
         }
+
         .guess-entry {
             display: flex;
             justify-content: center;
@@ -24,6 +64,7 @@
             margin: 5px;
             min-height: 50px;
         }
+
         .category-container {
             display: flex;
             justify-content: center;
@@ -31,6 +72,7 @@
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
         }
+
         .category {
             padding: 10px;
             font-size: 1.2em;
@@ -39,16 +81,25 @@
             border-radius: 5px;
             text-align: center;
         }
-        .correct { background-color: lightgreen; }
-        .wrong { background-color: lightcoral; }
+
+        .correct { 
+            background-color: lightgreen; 
+        }
+
+        .wrong { 
+            background-color: lightcoral; 
+        }
+
         .guess-name {
             font-weight: bold;
             width: 200px;
             text-align: center;
         }
+
         .celebrate {
             animation: celebration 1s ease-out;
         }
+
         @keyframes celebration {
             0% { transform: scale(1); opacity: 1; }
             50% { transform: scale(1.5); opacity: 0.8; }
@@ -67,19 +118,18 @@
     <div class="guess-container" id="categories"></div>
 
     <script>
-		let cookies = {};
-		let answerCookie = "";
-		let guessCount = 0; 
+        let cookies = {};
+        let answerCookie = "";
+        let guessCount = 0; 
 
-		fetch("cookies.json")
-			.then(response => response.json())
-			.then(data => {
-				cookies = data;
-				const cookieNames = Object.keys(cookies);
-				answerCookie = cookieNames[Math.floor(Math.random() * cookieNames.length)];
-			})
-			.catch(error => console.error("Error loading cookies.json:", error));
-
+        fetch("cookies.json")
+            .then(response => response.json())
+            .then(data => {
+                cookies = data;
+                const cookieNames = Object.keys(cookies);
+                answerCookie = cookieNames[Math.floor(Math.random() * cookieNames.length)];
+            })
+            .catch(error => console.error("Error loading cookies.json:", error));
 
         function checkGuess() {
             const guess = document.getElementById("guessInput").value;
