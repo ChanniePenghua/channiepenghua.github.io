@@ -1,0 +1,13 @@
+{
+    "Burning Spice Cookie": { "role": "Charge", "rarity": "Beast", "position": "Front" },
+    "Moon Rabbit Cookie": { "role": "Defense", "rarity": "Rare", "position": "Front" },
+    "Tea Knight Cookie": { "role": "Charge", "rarity": "Epic", "position": "Front" },
+    "Dark Cacao Cookie": { "role": "Charge", "rarity": "Ancient", "position": "Rear" },
+    "Hollyberry Cookie": { "role": "Defense", "rarity": "Ancient", "position": "Front" },
+    "Pure Vanilla Cookie": { "role": "Healing", "rarity": "Ancient", "position": "Rear" },
+    "Black Pearl Cookie": { "role": "Ambush", "rarity": "Legendary", "position": "Middle" },
+    "Clotted Cream Cookie": { "role": "Magic", "rarity": "Super Epic", "position": "Middle" },
+    "Affogato Cookie": { "role": "Magic", "rarity": "Epic", "position": "Middle" },
+    "Wildberry Cookie": { "role": "Defense", "rarity": "Epic", "position": "Front" },
+    "Stardust Cookie": { "role": "Ambush", "rarity": "Super Epic", "position": "Middle" }
+}
