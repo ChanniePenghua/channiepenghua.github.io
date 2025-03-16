@@ -26,7 +26,7 @@
         body {
             font-family: 'CookieRunRegular', sans-serif; /* Use CookieRun Regular for the body text */
             text-align: center;
-            margin: 150px;
+            margin: 100px;
             background: url('crk_wallpaper.png') no-repeat center center fixed;
             background-size: cover;
             height: 100vh;
@@ -39,6 +39,13 @@
 
         h3 {
             font-family: 'CookieRunBold', sans-serif; /* Use CookieRun Bold for the subtitle */
+        }
+
+        /* Add logo styles */
+        #logo {
+            width: 80%; /* Adjust the width as necessary */
+            max-width: 400px; /* Set a maximum width to prevent the logo from getting too large */
+            margin-bottom: 20px; /* Add space between logo and heading */
         }
 
         input, button { 
@@ -113,6 +120,9 @@
     </style>
 </head>
 <body>
+    <!-- Logo above the title -->
+    <img id="logo" src="crk_logo.png" alt="Cookie Rundle Kingdom Logo">
+
     <h1>Cookie Rundle Kingdom</h1>
     <h3>The Cookie Run Kingdom Guessing Game! </h3>
     <p>Enter your guess:</p>
