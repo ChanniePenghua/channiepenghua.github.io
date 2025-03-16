@@ -63,5 +63,5 @@
     "Pure Vanilla Cookie (Compassionate)": { "role": "Healing", "rarity": "Ancient", "position": "Rear" },
     "Mystic Flour Cookie": { "role": "Healing", "rarity": "Beast", "position": "Rear" },
     "Burning Spice Cookie": { "role": "Charge", "rarity": "Beast", "position": "Front" },
-    "Shadow Milk Cookie": { "role": "Magic", "rarity": "Beast", "position": "Middle" },
+    "Shadow Milk Cookie": { "role": "Magic", "rarity": "Beast", "position": "Middle" }
 }
