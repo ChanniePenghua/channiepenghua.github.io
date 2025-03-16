@@ -121,7 +121,7 @@
         let cookies = {};
         let answerCookie = "";
         let guessCount = 0; 
-
+    
         fetch("cookies.json")
             .then(response => response.json())
             .then(data => {
@@ -130,15 +130,24 @@
                 answerCookie = cookieNames[Math.floor(Math.random() * cookieNames.length)];
             })
             .catch(error => console.error("Error loading cookies.json:", error));
-
+    
+        // Add event listener for Enter key press
+        document.getElementById("guessInput").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();  // Optional: Prevent form submission (if inside a form)
+                checkGuess();  // Trigger the checkGuess function
+            }
+        });
+    
         function checkGuess() {
-            const guess = document.getElementById("guessInput").value;
+            const guess = document.getElementById("guessInput").value.trim().toLowerCase();  // Convert guess to lowercase
             const resultElement = document.getElementById("result");
             const guessCountElement = document.getElementById("guessCount");
             guessCount++;
 
+            // Compare with the answer (converted to lowercase)
             if (cookies[guess]) {
-                if (guess === answerCookie) {
+                if (guess === answerCookie.toLowerCase()) {  // Convert answerCookie to lowercase for comparison
                     displayGuess(guess, cookies[guess], true, true, true, true);
                     setTimeout(() => {
                         resultElement.innerHTML = `<strong class='celebrate'>Congrats! The answer was ${answerCookie}</strong>`;
@@ -147,21 +156,21 @@
                     guessCountElement.innerText = `Total guesses: ${guessCount}`;
                     return;
                 }
-                
+
                 const answerData = cookies[answerCookie];
                 const guessData = cookies[guess];
-                
+
                 const roleCorrect = guessData.role === answerData.role;
                 const rarityCorrect = guessData.rarity === answerData.rarity;
                 const positionCorrect = guessData.position === answerData.position;
-                
+
                 displayGuess(guess, guessData, false, roleCorrect, rarityCorrect, positionCorrect);
             } else {
                 resultElement.innerText = "Invalid cookie name!";
             }
             guessCountElement.innerText = `Guesses: ${guessCount}`;
         }
-
+    
         function displayGuess(guess, guessData, isCorrect, roleCorrect, rarityCorrect, positionCorrect) {
             const categoriesElement = document.getElementById("categories");
             const guessEntry = document.createElement("div");
@@ -178,12 +187,12 @@
             `;
             guessEntry.appendChild(categoryContainer);
             categoriesElement.prepend(guessEntry);
-
+    
             setTimeout(() => {
                 categoryContainer.style.opacity = 1;
             }, 500);
         }
-
+    
         function confetti() {
             const confettiScript = document.createElement("script");
             confettiScript.src = "https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js";
@@ -192,6 +201,6 @@
             };
             document.body.appendChild(confettiScript);
         }
-    </script>
+    </script>    
 </body>
 </html>
