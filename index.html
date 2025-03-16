@@ -24,21 +24,28 @@
 
         /* Background image */
         body {
-            font-family: 'CookieRunRegular', sans-serif; /* Use CookieRun Regular for the body text */
+            font-family: 'CookieRunRegular', sans-serif;
             text-align: center;
             margin: 100px;
             background: url('crk_wallpaper.png') no-repeat center center fixed;
             background-size: cover;
             height: 100vh;
             padding: 0;
+            color: white; /* Set text color to white */
+        }
+
+        /* Apply white text with black outline to all headings and text elements */
+        h1, h3, p, .guess-name, .category {
+            color: white; /* White text */
+            text-shadow: 0 0 2px black, 0 0 2px black; /* Black outline with 2px thickness */
         }
 
         h1 {
-            font-family: 'CookieRunBlack', sans-serif; /* Use CookieRun Black for the main title */
+            font-family: 'CookieRunBlack', sans-serif;
         }
 
         h3 {
-            font-family: 'CookieRunBold', sans-serif; /* Use CookieRun Bold for the subtitle */
+            font-family: 'CookieRunBold', sans-serif;
         }
 
         /* Add logo styles */
@@ -51,14 +58,22 @@
         input, button { 
             margin-top: 10px; 
             padding: 5px; 
+            color: white;
+            background-color: transparent;
+            border: 1px solid white;
+            text-shadow: 0 0 2px black, 0 0 2px black; /* Black outline for input/button text */
         }
 
         #result { 
             margin-top: 20px; 
+            color: white;
+            text-shadow: 0 0 2px black, 0 0 2px black;
         }
 
         #guessCount { 
-            font-weight: bold; 
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 0 2px black, 0 0 2px black;
         }
 
         .guess-container {
@@ -92,6 +107,8 @@
             width: 200px;
             border-radius: 5px;
             text-align: center;
+            color: white;
+            text-shadow: 0 0 2px black, 0 0 2px black;
         }
 
         .correct { 
@@ -106,6 +123,8 @@
             font-weight: bold;
             width: 200px;
             text-align: center;
+            color: white;
+            text-shadow: 0 0 2px black, 0 0 2px black;
         }
 
         .celebrate {
