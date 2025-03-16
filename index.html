@@ -63,6 +63,12 @@
             border: 1px solid white;
         }
 
+        /* Placeholder styling */
+        input::placeholder {
+            color: black; /* Placeholder text color */
+            text-shadow: none; /* Remove any text shadow from the placeholder */
+        }
+
         #result { 
             margin-top: 20px; 
             color: white;
@@ -141,10 +147,11 @@
     <!-- Logo above the title -->
     <img id="logo" src="crk_logo.png" alt="Cookie Rundle Kingdom Logo">
 
-    <h1>Cookie Rundle Kingdom</h1>
-    <h3>The Cookie Run Kingdom Guessing Game! </h3>
-    <p>Enter your guess:</p>
-    <input type="text" id="guessInput">
+    <h1>Welcome to Cookie Rundle Kingdom!</h1>
+    <h3>The Cookie Run Kingdom Guessing Game </h3>
+    <p>Developed by WildNoodle & ChanniePenghua </p>
+    <!-- Input field with placeholder -->
+    <input type="text" id="guessInput" placeholder="Enter your cookie...">
     <button onclick="checkGuess()">Submit</button>
     <p id="result"></p>
     <p id="guessCount">Guesses: 0</p>
