@@ -51,7 +51,7 @@
     "Stormbringer Cookie": { "role": "Charge", "rarity": "Legendary", "position": "Front" },
     "Moonlight Cookie": { "role": "Magic", "rarity": "Legendary", "position": "Middle" },
     "Black Pearl Cookie": { "role": "Ambush", "rarity": "Legendary", "position": "Middle" },
-    "Frost Queen Cookie": { "role": "", "rarity": "Legendary", "position": "Middle" },
+    "Frost Queen Cookie": { "role": "Magic", "rarity": "Legendary", "position": "Middle" },
     "Sea Fairy Cookie": { "role": "Bomber", "rarity": "Legendary", "position": "Middle" },
     "Pure Vanilla Cookie": { "role": "Healing", "rarity": "Ancient", "position": "Rear" },
     "Hollyberry Cookie": { "role": "Defense", "rarity": "Ancient", "position": "Front" },
