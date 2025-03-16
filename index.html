@@ -140,14 +140,13 @@
         });
     
         function checkGuess() {
-            const guess = document.getElementById("guessInput").value.trim().toLowerCase(); // Convert guess to lowercase
+            const guess = document.getElementById("guessInput").value;
             const resultElement = document.getElementById("result");
             const guessCountElement = document.getElementById("guessCount");
             guessCount++;
     
-            // Convert answerCookie to lowercase and compare
             if (cookies[guess]) {
-                if (guess === answerCookie.toLowerCase()) { // Convert answerCookie to lowercase for comparison
+                if (guess === answerCookie) {
                     displayGuess(guess, cookies[guess], true, true, true, true);
                     setTimeout(() => {
                         resultElement.innerHTML = `<strong class='celebrate'>Congrats! The answer was ${answerCookie}</strong>`;
